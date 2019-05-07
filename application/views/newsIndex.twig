@@ -1,0 +1,27 @@
+{% extends "static/app.twig" %}
+
+{% block head %}
+    {% include "static/head.twig" %}
+{% endblock %}
+
+{% block content %}
+    <h3 style="color: red">{{error_info}}</h3>
+    <ul>
+        <li><a href="../panel">wróć</a></li>
+        <li><a href="addForm">dodaj</a></li>
+    </ul>
+    <hr />
+    <ul>
+        {% for item in data %}
+            <li>
+                {{ item.title }} 
+                <a href="editForm/{{item.id}}">Edit</a>&nbsp;
+                <a href="remove/{{item.id}}">Remove</a> 
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block footer %}
+    {% include "static/footer.twig" %}
+{% endblock %}

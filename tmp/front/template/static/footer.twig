@@ -1,0 +1,13 @@
+{% for item in html.body %}
+    {{ item }}
+{% endfor %}
+{% for url in html.jsEnd %}
+    <script src="{{ url }}"></script>
+{% endfor %}
+{% for js in html.jsScriptEnd %}
+    <script>
+        {{ js }}
+    </script>
+{% endfor %}
+</body>
+</html>

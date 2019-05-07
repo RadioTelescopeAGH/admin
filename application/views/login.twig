@@ -1,0 +1,22 @@
+{% extends "static/app.twig" %}
+
+{% block head %}
+    {% include "static/head.twig" %}
+{% endblock %}
+
+{% block content %}
+    <div class="holder">
+        <div class="loginForm">
+            <div class="hd1">Zaloguj się</div>
+            <form action="modules.php?action=login" method="post" class="form">
+                <input type="text" name="login">
+                <input type="password" name="password">
+                <button>Loguj</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "static/footer.twig" %}
+{% endblock %}

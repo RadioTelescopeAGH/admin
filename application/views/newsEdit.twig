@@ -1,0 +1,35 @@
+{% extends "static/app.twig" %}
+
+{% block head %}
+    {% include "static/head.twig" %}
+{% endblock %}
+
+{% block content %}
+    <h3 style="color: red">{{error_info}}</h3>
+    <form action="../edit/{{data.id}}" method="post" enctype="multipart/form-data">
+        <div class="itemHolder">
+            <div class="inputName">Tytuł</div>
+            <div class="inputHolder">
+                <input type="text" name="title" value="{{data.title}}">
+            </div>
+        </div>
+        <div class="itemHolder">
+            <div class="inputName">Treść</div>
+            <div class="inputHolder">
+                <textarea name="content" id="" cols="30" rows="10">{{data.content}}</textarea>
+            </div>
+        </div>
+        <div class="itemHolder">
+            <div class="inputName">Zdjęcie</div>
+            <div class="inputHolder">
+                <input type="file" name="foto" id="">
+            </div>
+        </div>
+        <br />
+        <button>Save</button>
+    </form>
+{% endblock %}
+
+{% block footer %}
+    {% include "static/footer.twig" %}
+{% endblock %}
